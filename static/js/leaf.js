@@ -82,7 +82,7 @@ function buildMapContainer() {
                 maxZoom: 18,
                 zoomOffset: -1,
                 id: "mapbox/light-v10",
-                accessToken: API_KEY
+                accessToken: process.env.API_KEY
             });
 
             // creates map centered on center of USA, with layer of Baths
