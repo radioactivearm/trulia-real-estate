@@ -5,7 +5,7 @@
 from flask import Flask
 from flask import render_template
 from flask import jsonify
-from config import password, username, localhost, port
+
 
 # Import the functions from sqlalchemy
 import sqlalchemy
@@ -14,8 +14,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
 # username = 'postgres'
-database_name = 'real_estate_db'
-connection_string = f'postgresql://{username}:{password}@{localhost}:{port}/{database_name}'
+connection_string = 'sqlite:///SQlite/real_estate_db.db'
 
 print(connection_string)
 # Connect to database
@@ -23,7 +22,7 @@ engine = create_engine(connection_string)
 base = automap_base()
 base.prepare(engine, reflect=True)
 
-# Our tables
+# # Our tables
 table1 = base.classes.trulia_real_estate
 table2 = base.classes.locations
 
